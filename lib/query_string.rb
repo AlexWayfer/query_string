@@ -1,7 +1,7 @@
-require "queryparams/version"
+require "query_string/version"
 require "cgi"
 
-module QueryParams
+module QueryString
 
   def self.encode(value, key = nil)
     case value

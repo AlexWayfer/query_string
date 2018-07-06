@@ -1,3 +1,3 @@
-module QueryParams
+module QueryString
   VERSION = "0.0.3"
 end
