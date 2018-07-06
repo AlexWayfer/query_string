@@ -21,6 +21,7 @@ steps: &steps
 
 spec_env: &spec_env
   environment:
+    - CODECOV: true
     - TASK: spec
 
 rubocop_env: &rubocop_env
