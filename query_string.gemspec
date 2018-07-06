@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Simen Svale Skogsrud', 'Alexander Popov']
   s.email       = ['simen@bengler.no', 'alex.wayfer@gmail.com']
   s.homepage    = 'https://github.com/AlexWayfer/query_string'
-  s.summary     = 'Convert nested Ruby Hashes and Arrays to HTTP query string.'
+  s.summary     = 'Build HTTP query strings from nested Ruby Hashes and Arrays.'
   s.description =
     'It supports Hashes, Arrays, nested Hashes and Arrays of Hashes ' \
     'and all combinations thereof.'
