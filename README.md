@@ -1,6 +1,6 @@
 # QueryString
 
-A straight forward gem to convert ruby hashes and arrays to http query strings following the query string conventions of Rails and Sinatra. It supports hashes, arrays, nested hashes and arrays of hashes and all combinations thereof. E.g.:
+A straight forward gem to convert Ruby Hashes and Arrays to HTTP query strings following the query string conventions of Rails and Sinatra. It supports Hashes, Arrays, nested Hashes and Arrays of Hashes and all combinations thereof. E.g.:
 
     QueryString.encode({a: 1, b: "c"})
     => "a=1&b=c"

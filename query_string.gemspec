@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Simen Svale Skogsrud", "Alexander Popov"]
   s.email       = ["simen@bengler.no", "alex.wayfer@gmail.com"]
   s.homepage    = "https://github.com/AlexWayfer/query_string"
-  s.summary     = %q{A straight forward gem to convert ruby hashes and arrays to http query strings.}
-  s.description = %q{ It supports hashes, arrays, nested hashes and arrays of hashes and all combinations thereof.}
+  s.summary     = %q{A straight forward gem to convert Ruby Hashes and Arrays to HTTP query strings.}
+  s.description = %q{It supports Hashes, Arrays, nested Hashes and Arrays of Hashes and all combinations thereof.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
