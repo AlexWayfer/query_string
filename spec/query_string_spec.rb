@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-describe QueryString do 
+describe QueryString do
   it "generates nothing if need be" do
     QueryString.encode({}).should eq ""
     QueryString.encode(nil).should eq ""

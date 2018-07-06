@@ -8,8 +8,8 @@ module QueryString
     when Hash  then value.map { |k,v| encode(v, append_key(key,k)) }.join('&')
     when Array then value.map { |v| encode(v, "#{key}[]") }.join('&')
     when nil   then ''
-    else            
-      "#{key}=#{CGI.escape(value.to_s)}" 
+    else
+      "#{key}=#{CGI.escape(value.to_s)}"
     end
   end
 
