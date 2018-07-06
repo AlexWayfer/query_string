@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
     'It supports Hashes, Arrays, nested Hashes and Arrays of Hashes ' \
     'and all combinations thereof.'
 
+  s.license = 'MIT'
+
   s.required_ruby_version = '>= 2.2'
 
   s.files         = `git ls-files`.split("\n")
