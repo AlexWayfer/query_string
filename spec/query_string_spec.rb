@@ -73,16 +73,28 @@ describe QueryString do
       it { is_expected.to eq 'a[]=' }
     end
 
-    context 'input is Hash with empty Hash value' do
+    context 'input is Hash with only empty Hash value' do
       let(:input) { { a: {} } }
 
       it { is_expected.to eq '' }
     end
 
-    context 'input is Hash with empty Array value' do
+    context 'input is Hash with only empty Array value' do
       let(:input) { { a: [] } }
 
       it { is_expected.to eq '' }
+    end
+
+    context 'input is Hash with empty Hash value' do
+      let(:input) { { a: 'b', c: {} } }
+
+      it { is_expected.to eq 'a=b' }
+    end
+
+    context 'input is Hash with empty Array value' do
+      let(:input) { { a: 'b', c: [] } }
+
+      it { is_expected.to eq 'a=b' }
     end
   end
 end

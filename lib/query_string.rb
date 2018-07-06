@@ -21,7 +21,7 @@ module QueryString
     def build_hash(hash, prefix)
       hash.map do |k, v|
         build(v, prefix ? "#{prefix}[#{escape(k)}]" : escape(k))
-      end.join('&')
+      end.reject(&:empty?).join('&')
     end
 
     def escape(value)
