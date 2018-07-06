@@ -40,5 +40,11 @@ describe QueryString do
 
       it { is_expected.to eq 'a[][b]=c&a[][d]=e&a[][b]=g' }
     end
+
+    context 'input is Hash with unencoded keys and values' do
+      let(:input) { { 'test field' => { 'another weird' => 'foo/(bar)' } } }
+
+      it { is_expected.to eq 'test+field[another+weird]=foo%2F%28bar%29' }
+    end
   end
 end

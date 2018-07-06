@@ -1,5 +1,4 @@
 require 'query_string/version'
-require 'cgi'
 
 # Module with class methods for convertation
 module QueryString
@@ -7,14 +6,20 @@ module QueryString
     def build(value, prefix = nil)
       case value
       when Hash
-        value.map { |k, v| build(v, prefix ? "#{prefix}[#{k}]" : k) }.join('&')
+        value.map do |k, v|
+          build(v, prefix ? "#{prefix}[#{escape(k)}]" : escape(k))
+        end.join('&')
       when Array
         value.map { |v| build(v, "#{prefix}[]") }.join('&')
-      when nil
-        ''
-      else
-        "#{prefix}=#{CGI.escape(value.to_s)}"
+      when nil then ''
+      else "#{prefix}=#{escape(value)}"
       end
+    end
+
+    private
+
+    def escape(value)
+      URI.encode_www_form_component(value)
     end
   end
 end
