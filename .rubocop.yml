@@ -3,3 +3,7 @@ AllCops:
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*

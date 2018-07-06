@@ -2,26 +2,43 @@ require 'bundler'
 Bundler.require
 
 describe QueryString do
-  it 'generates nothing if need be' do
-    QueryString.build({}).should eq ''
-    QueryString.build(nil).should eq ''
-  end
+  describe '.build' do
+    subject { described_class.build(input) }
 
-  it 'generates a straight forward query string' do
-    QueryString.build(a: 1, b: 'c').should eq 'a=1&b=c'
-  end
+    context 'input is empty Hash' do
+      let(:input) { {} }
 
-  it 'handles nested hashes' do
-    QueryString.build(a: { b: 'c', d: 'e' }, f: 'g')
-      .should eq 'a[b]=c&a[d]=e&f=g'
-  end
+      it { is_expected.to eq '' }
+    end
 
-  it 'handles arrays' do
-    QueryString.build(a: %w[bingo hepp]).should eq 'a[]=bingo&a[]=hepp'
-  end
+    context 'input is nil' do
+      let(:input) { nil }
 
-  it 'handles arrays of hashes' do
-    QueryString.build(a: [{ b: 'c', d: 'e' }, { b: 'g' }])
-      .should eq 'a[][b]=c&a[][d]=e&a[][b]=g'
+      it { is_expected.to eq '' }
+    end
+
+    context 'input is one-level Hash' do
+      let(:input) { { a: 1, b: 'c', d: :e, f: 2.34 } }
+
+      it { is_expected.to eq 'a=1&b=c&d=e&f=2.34' }
+    end
+
+    context 'input is nested Hashes' do
+      let(:input) { { a: { b: 'c', d: 'e' }, f: 'g' } }
+
+      it { is_expected.to eq 'a[b]=c&a[d]=e&f=g' }
+    end
+
+    context 'input is Hash with Array' do
+      let(:input) { { a: %w[foo bar] } }
+
+      it { is_expected.to eq 'a[]=foo&a[]=bar' }
+    end
+
+    context 'input is Hash with Array of Hashes' do
+      let(:input) { { a: [{ b: 'c', d: 'e' }, { b: 'g' }] } }
+
+      it { is_expected.to eq 'a[][b]=c&a[][d]=e&a[][b]=g' }
+    end
   end
 end
