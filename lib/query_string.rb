@@ -9,7 +9,7 @@ module QueryString
         build_hash(value, prefix)
       when Array
         value.map { |v| build(v, "#{prefix}[]") }.join('&')
-      when nil then ''
+      when nil then prefix.to_s
       else
         raise ArgumentError, 'value must be a Hash' if prefix.nil?
         "#{prefix}=#{escape(value)}"
