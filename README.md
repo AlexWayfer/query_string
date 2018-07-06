@@ -1,5 +1,9 @@
 # QueryString
 
+[![CircleCI branch](https://img.shields.io/circleci/project/github/AlexWayfer/query_string/master.svg?style=flat-square)](https://circleci.com/gh/AlexWayfer/query_string/tree/master)
+[![Codecov branch](https://img.shields.io/codecov/c/github/AlexWayfer/query_string/master.svg?style=flat-square)](https://codecov.io/gh/AlexWayfer/query_string/branch/master)
+[![license](https://img.shields.io/github/license/AlexWayfer/query_string.svg?style=flat-square)](https://github.com/AlexWayfer/query_string/blob/master/LICENSE)
+
 A straight forward gem to build HTTP query strings from Ruby Hashes and Arrays following the query string conventions of Rails and Sinatra. It supports Hashes, Arrays, nested Hashes and Arrays of Hashes and all combinations thereof. E.g.:
 
 ```ruby
