@@ -17,6 +17,14 @@ describe QueryString do
       it { is_expected.to eq '' }
     end
 
+    context 'input is String' do
+      let(:input) { 'foo=bar' }
+
+      it do
+        expect { subject }.to raise_error(ArgumentError, 'value must be a Hash')
+      end
+    end
+
     context 'input is one-level Hash' do
       let(:input) { { a: 1, b: 'c', d: :e, f: 2.34 } }
 
