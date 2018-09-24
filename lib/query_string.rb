@@ -12,6 +12,7 @@ module QueryString
       when nil then prefix.to_s
       else
         raise ArgumentError, 'value must be a Hash' if prefix.nil?
+
         "#{prefix}=#{escape(value)}"
       end
     end
