@@ -20,13 +20,6 @@ steps: &steps
     - run: bundle exec rake run_task_from_env
 
 jobs:
-  ruby-2.2:
-    docker:
-      - image: circleci/ruby:2.2
-    environment:
-      - TASK: spec
-    <<: *steps
-
   ruby-2.3:
     docker:
       - image: circleci/ruby:2.3
@@ -49,16 +42,24 @@ jobs:
       - CODECOV: true
     <<: *steps
 
-  jruby-9.2:
+  ruby-2.6:
     docker:
-      - image: circleci/jruby:9.2
+      - image: circleci/ruby:2.6
+    environment:
+      - TASK: spec
+      - CODECOV: true
+    <<: *steps
+
+  jruby-latest:
+    docker:
+      - image: circleci/jruby:latest
     environment:
       - TASK: spec
     <<: *steps
 
   rubocop:
     docker:
-      - image: circleci/ruby:2.5
+      - image: circleci/ruby:2.6
     environment:
       - TASK: rubocop
     <<: *steps
@@ -68,9 +69,9 @@ workflows:
   version: 2
   build:
     jobs:
-      - ruby-2.2
       - ruby-2.3
       - ruby-2.4
       - ruby-2.5
-      - jruby-9.2
+      - ruby-2.6
+      - jruby-latest
       - rubocop
