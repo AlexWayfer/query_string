@@ -39,7 +39,6 @@ jobs:
       - image: circleci/ruby:2.5
     environment:
       - TASK: spec
-      - CODECOV: true
     <<: *steps
 
   ruby-2.6:
