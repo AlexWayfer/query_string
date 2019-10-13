@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'query_string/version'
 
 # Module with class methods for convertation

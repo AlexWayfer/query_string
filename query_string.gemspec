@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'lib/query_string/version'
 
 Gem::Specification.new do |s|
@@ -13,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.license = 'MIT'
 
-  s.required_ruby_version = '>= 2.2'
+  s.required_ruby_version = '>= 2.3'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
