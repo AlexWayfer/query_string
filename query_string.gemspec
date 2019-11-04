@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'codecov', '~> 0.1'
   s.add_development_dependency 'rake', '~> 13'
   s.add_development_dependency 'rspec', '~> 3.7'
-  s.add_development_dependency 'rubocop', '~> 0.75.0'
+  s.add_development_dependency 'rubocop', '~> 0.76.0'
   s.add_development_dependency 'simplecov', '~> 0.16'
   # s.add_runtime_dependency 'rest-client'
 end
