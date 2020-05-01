@@ -42,6 +42,14 @@ jobs:
       - CODECOV: true
     <<: *steps
 
+  ruby-2.7:
+    docker:
+      - image: circleci/ruby:2.7
+    environment:
+      - TASK: spec
+      - CODECOV: true
+    <<: *steps
+
   jruby-latest:
     docker:
       - image: circleci/jruby:latest
@@ -51,7 +59,7 @@ jobs:
 
   rubocop:
     docker:
-      - image: circleci/ruby:2.6
+      - image: circleci/ruby:latest
     environment:
       - TASK: rubocop
     <<: *steps
