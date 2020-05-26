@@ -5,6 +5,8 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
 
 Lint/RaiseException:
   Enabled: true
@@ -18,6 +20,8 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 Style/ExponentialNotation:
+  Enabled: true
+Style/SlicingWithRange:
   Enabled: true
 
 Metrics/BlockLength:
