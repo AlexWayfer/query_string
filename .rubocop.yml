@@ -12,6 +12,8 @@ Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
   Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
 
 Style/HashEachMethods:
   Enabled: true
